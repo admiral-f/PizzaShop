@@ -27,11 +27,11 @@ post '/contacts' do
       		:to => "admiral-f@yandex.ru",
       		:from => "admiral-f@yandex.ru",
       		:subject => params[:name] + " has contacted you",
-      		:body => params[:name] + " write message: " + params[:text],
+      		:body => params[:email] + " write message: " + params[:text],
       		:via => :smtp,
       		:via_options => { 
         	:address              => 'smtp.yandex.ru', 
-        	:port                 => '465', 
+        	:port                 => '25', 
         	:enable_starttls_auto => true, 
         	:user_name            => 'admiral-f', 
         	:password             => 'kalinin1987', 
