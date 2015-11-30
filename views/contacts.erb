@@ -1,0 +1,58 @@
+<h4>Contacts</h4>
+<h6>You can phone us or send message</h6>
+</br>
+<address>
+  <strong>PizzaShop</strong><br>
+  117463 Russia, Moscow<br>
+  Golubinskaja ul., 28<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+<address>
+  <strong>Email</strong><br>
+  <a href="mailto:#">admiral-f@yandex.ru</a>
+</address>
+</br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >Send message</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/contacts" method="POST">
+           <div class="form-group">
+            <label for="recipient-name" class="control-label" >Name:</label>
+            <input type="text" class="form-control" id="recipient-name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label" >Email:</label>
+            <input type="text" class="form-control" id="recipient-name" name="email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text" name="text"></textarea>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</br>
+</br>
+</br>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2254.399300179155!2d37.53940531536423!3d55.59506401161485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aad6eb9458f15%3A0xcb4c56eef5990028!2z0JPQvtC70YPQsdC40L3RgdC60LDRjyDRg9C7LiwgMjgsINCc0L7RgdC60LLQsCwgMTE3NDYz!5e0!3m2!1sru!2sru!4v1448897573675" width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<script type="text/javascript">
+		$('#exampleModal').on('show.bs.modal', function (event) {
+  			
+});
+</script>
