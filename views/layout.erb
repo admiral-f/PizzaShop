@@ -18,10 +18,10 @@
 		<![endif]-->
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" >
 
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-default" role="navigation" style="background-color: green">
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			      <span class="sr-only">Toggle navigation</span>
@@ -29,13 +29,13 @@
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			    </button>
-			    <a class="navbar-brand" href="/">PizzaShop</a>
+			    <a class="navbar-brand" href="/"><img alt="Brand" src="/img/logo.jpg"></a>
 			  </div>
-			  <div class="navbar-collapse collapse">
-			    <ul class="nav navbar-nav">
-			      <li><a href="/about">About</a></li>
-			      <li><a href="/something">Something</a></li>
-			      <li><a href="/contacts">Contacts</a></li>
+			  <div class="navbar-collapse collapse" >
+			    <ul class="nav navbar-nav" >
+			      <li><a href="/about" ><font color="white">About</font></a></li>
+			      <li><a href="/something"><font color="white">Something</font></a></li>
+			      <li><a href="/contacts"><font color="white">Contacts</font></a></li>
 			    </ul>
 			  </div><!--/.nav-collapse -->
 			</nav>
@@ -43,6 +43,9 @@
 			<div>
 			      <%if @error && @error.length > 0 then %>
 			          <div class="alert alert-danger"><%=@error%></div>
+			      <% end %>
+			      <%if @answer && @answer.length > 0 then %>
+			          <div class="alert alert-success"><%= @answer %></div>
 			      <% end %>
 			      <%= yield %>
 			</div>
