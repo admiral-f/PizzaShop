@@ -42,3 +42,7 @@ post '/contacts' do
   erb :contacts
 			
 end
+
+get '/shop' do
+	erb :shop			
+end
