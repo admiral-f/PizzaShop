@@ -1,11 +1,29 @@
 <h2>Shop here</h2>
 <div class="row">
-  <div class="col-md-4">
-  	<ul class="nav nav-pills nav-stacked green">
-  		<li role="presentation" class="active"><a href="#">Home</a></li>
-  		<li role="presentation"><a href="#">Profile</a></li>
-  		<li role="presentation"><a href="#">Messages</a></li>
+  <div class="col-md-3">
+  	<ul class="nav nav-pills nav-stacked">
+  		<li class="active"><a href="/shop">All</a></li>
+      <% @category.each do |cat| %>
+  		  <li> <a href="/shop/<%=cat.category%>"><%=cat.category%></a></li>
+  		<% end %>
 	</ul>
   </div>
-  <div class="col-md-8">.col-xs-6 .col-md-4</div>
+  <div class="col-md-9">
+  	<div class="row">
+  		<% @products.each do |product| %>
+    		<div class=" col-md-4">
+      			<div class="thumbnail" style="height: 520px">
+        			<img src="<%=product.path_to_image%>" class="img-thumbnail">
+        			<div class="caption">
+	          			<h3><center><%=product.title%></center></h3>
+	          			<p><%=product.description%></p>
+	          			<p>Pizza size: <%=product.size%></p>
+	          			<p>Price: <b><%=product.price%> $</b></p>
+	          			<p><a href="#" class="btn btn-success btn-xs" role="button" onclick="alert('hello!')">Add to cart</a></p>
+        			</div>
+      			</div>
+    		</div>  
+  		<% end %>
+	</div>
+  </div>
 </div>

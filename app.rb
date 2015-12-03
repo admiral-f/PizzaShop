@@ -10,12 +10,13 @@ set :database, "sqlite3:pizzashop.db"
 class Product <ActiveRecord::Base
 end
 
-before do
-	@products=Product.all
+#before do
+#	@products=Product.all
 	
-end
+#end
 
 get '/' do
+	@products=Product.all
 	erb :index			
 end
 
@@ -55,5 +56,13 @@ post '/contacts' do
 end
 
 get '/shop' do
+	@category=Product.select(:category).distinct
+	@products=Product.all
+	erb :shop			
+end
+
+get '/shop/:category' do
+	@category=Product.select(:category).distinct
+	@products=Product.where(category: params[:category])
 	erb :shop			
 end
