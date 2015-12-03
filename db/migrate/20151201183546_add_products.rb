@@ -72,6 +72,15 @@ class AddProducts < ActiveRecord::Migration
   		:path_to_image => '/img/margarita.jpg'
       })
 
+    Product.create ({
+      :category => 'drink',
+      :title => 'Coca-Cola', 
+      :description => 'Classic Coca-Cola', 
+      :price => 1, 
+      :is_veg => true, 
+      :is_best_offer => true, 
+      :path_to_image => '/img/cola.jpg'
+      })
 
   end
 end
