@@ -24,14 +24,14 @@
 <div class="row">
   <% @products.each do |product| %>
     <div class=" col-md-4">
-      <div class="thumbnail" style="">
+      <div class="thumbnail" style="height: 520px">
         <img src="<%=product.path_to_image%>" class="img-thumbnail">
         <div class="caption">
           <h3><center><%=product.title%></center></h3>
           <p><%=product.description%></p>
           <p>Pizza size: <%=product.size%></p>
           <p>Price: <b><%=product.price%> $</b></p>
-          <p><a href="#" class="btn btn-success btn-xs" role="button">Add to cart</a></p>
+          <p><a href="#" class="btn btn-success btn-xs" role="button" onclick="alert('hello!')">Add to cart</a></p>
         </div>
       </div>
     </div>  
