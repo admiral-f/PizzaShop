@@ -16,7 +16,7 @@ end
 #end
 
 get '/' do
-	@products=Product.all
+	@products=Product.where(category: 'pizza')
 	erb :index			
 end
 
