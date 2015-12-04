@@ -62,3 +62,7 @@ get '/shop/:category' do
 	@products=Product.where(category: params[:category])
 	erb :shop			
 end
+
+post '/cart' do
+	erb 'Hello'
+end
