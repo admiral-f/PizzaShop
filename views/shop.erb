@@ -1,15 +1,15 @@
 <h2>Shop here</h2>
 <div class="row">
   <div class="col-md-3">
-  	<ul class="nav nav-pills nav-stacked">
-  		<li class=" "><a href="/shop">All</a></li>
+  	<ul class="nav nav-pills nav-stacked green">
+  		<li class="rbx-tab"><a href="/shop">All</a></li>
       <% @category.each do |cat| %>
-  		  <li> <a href="/shop/<%=cat.category%>"><%=cat.category%></a></li>
+  		  <li class="rbx-tab"> <a href="/shop/<%=cat.category%>"><%=cat.category%></a></li>
   		<% end %>
 	</ul>
   </div>
   <div class="col-md-9">
-  	<div class="row">
+   	<div class="row">
   		<% @products.each do |product| %>
     		<div class=" col-md-4">
       			<div class="thumbnail" style="height: 520px">
@@ -30,3 +30,10 @@
 	</div>
   </div>
 </div>
+
+<script type="text/javascript">
+    $('li a').click(function () {
+        $('li.rbx-tab').removeClass('active');
+        $(this).closest('li.rbx-tab').addClass('active');
+    });
+</script>
