@@ -22,7 +22,7 @@
                   <% end %>
                   
 	          			<p>Price: <b><%=product.price%> $</b></p>
-	          			<p><a href="#" class="btn btn-success btn-xs" role="button" onclick="alert('hello!')">Add to cart</a></p>
+	          			<p><a href="#" class="btn btn-success btn-xs" role="button" onclick="add_to_cart(<%=product.id%>)">Add to cart</a></p>
         			</div>
       			</div>
     		</div>  
@@ -35,5 +35,9 @@
     $('li a').click(function () {
         $('li.rbx-tab').removeClass('active');
         $(this).closest('li.rbx-tab').addClass('active');
+    });
+    $(function(){
+      update_orders_input();
+      update_orders_button();
     });
 </script>
