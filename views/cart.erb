@@ -1,5 +1,5 @@
 <h2><center>Your cart</center></h2>
-<table class="table table-condensed">
+<table class="table table-striped">
   <thead>
     <tr>
    	  <th>#</th>
@@ -15,7 +15,7 @@
   <%@items.each do |item|%>
    <tr>
    	  <td><%= item[0].id %></td>
-   	  <td><%= item[0].title %></td>
+   	  <td><b><%= item[0].title %></b></td>
    	  <td><%= item[0].price %> $</td>
    	  <td><%= item[0].size %></td>
    	  <td><%= item[1] %></td>
@@ -26,9 +26,9 @@
    <tr>
    		<td></td>
    		<td></td>
-   		<td>Total price: <%= total_price %>$</td>
+   		<td><b>Total price: <%= total_price %>$</b></td>
    		<td></td>
-   		<td>Total qty: <%= total_qty %></td>
+   		<td><b>Total qty: <%= total_qty %></b></td>
    </tr>
 
   </tbody>
@@ -59,7 +59,7 @@
     </br>
     <center>
       <p>
-        <button type="submit" class="btn btn-success btn-lg">Submit</button>
+        <button type="submit" class="btn btn-success btn-lg" onclick="cart_clear()">Submit</button>
       </p>
     </center>
 </form>
