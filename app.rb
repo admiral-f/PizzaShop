@@ -10,6 +10,12 @@ set :database, "sqlite3:pizzashop.db"
 class Product <ActiveRecord::Base
 end
 
+class Order < ActiveRecord::Base
+	validates :name, presence: true
+    validates :phone, presence: true
+    validates :address, presence: true
+end
+
 def order_split orders
 	s1 = orders.split(/,/)
 	arr=[]
@@ -84,6 +90,33 @@ post '/cart' do
 	erb :cart
 end
 
+
+
 post '/order' do
+	@ordering = Order.new params[:order]
+	if @ordering.save
+		@answer="Order success"
+		
+	else
+		@error=@ordering.errors.full_messages.first
+	end
 	erb :order
+end
+
+get '/admin' do
+	@orders = Order.new
+	erb :admin
+end
+
+post '/admin' do
+	login = params[:login]
+	password = params[:password]
+	if login=='admin' && password=='12345'
+		@orders=Order.all
+		erb :admin_orders
+	else
+		@error='Wrong login or password'
+		erb :admin
+	end
+	
 end
