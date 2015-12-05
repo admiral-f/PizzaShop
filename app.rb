@@ -76,6 +76,9 @@ end
 
 post '/cart' do
 	orders_input=params[:orders]
-	@orders = order_split orders_input
-	erb "ffsffds #{@orders.inspect}"
+	@items = order_split orders_input
+	@items.each do |item|
+		item[0] = Product.find(item[0])
+	end
+	erb :cart
 end
