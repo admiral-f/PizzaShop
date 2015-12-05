@@ -33,6 +33,38 @@
 
   </tbody>
 </table>
+</br>
+<form action="/order" method="POST"> 
+	<input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />  
+    <div class="row">
+      <div class="col-xs-6">
+        <label>Enter your name</label>
+        <input type="text" class="form-control" name="order[name]" placeholder="Enter your name" value="<%= @name %>">
+      </div>
+      <div class="col-xs-6">
+        <label>Enter your phone number</label>
+        <input type="text" class="form-control" name="order[phone]" placeholder="X-(XXX)-XXX-XX-XX" value="<%= @phone %>">
+      </div>
+    </div>
+    </br>
+    <div class="row">
+      <div class="col-xs-6">
+        <label>Delivery address</label>
+        <textarea rows="3" cols="76" placeholder="Your address"  type="text" name="order[address]" value="<%= @adress %>"></textarea>
+	  </div>
+      <div class="col-xs-6">
+      </div>
+    </div>
+    </br>
+    </br>
+    <center>
+      <p>
+        <button type="submit" class="btn btn-success btn-lg">Submit</button>
+      </p>
+    </center>
+</form>
+
+
 
 
 
