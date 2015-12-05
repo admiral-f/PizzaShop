@@ -2,7 +2,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-   	  <th>#</th>
    	  <th>Product</th>
    	  <th>Price</th>
    	  <th>Size (cm)</th>
@@ -14,7 +13,6 @@
   <%total_qty=0%>
   <%@items.each do |item|%>
    <tr>
-   	  <td><%= item[0].id %></td>
    	  <td><b><%= item[0].title %></b></td>
    	  <td><%= item[0].price %> $</td>
    	  <td><%= item[0].size %></td>
@@ -24,7 +22,6 @@
    <%total_qty +=item[1].to_i%>
   <% end %>
    <tr>
-   		<td></td>
    		<td></td>
    		<td><b>Total price: <%= total_price %>$</b></td>
    		<td></td>
