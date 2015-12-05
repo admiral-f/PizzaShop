@@ -10,6 +10,17 @@ set :database, "sqlite3:pizzashop.db"
 class Product <ActiveRecord::Base
 end
 
+def order_split orders
+	s1 = orders.split(/,/)
+	arr=[]
+	s1.each do |x|
+		s2 = x.split(/\=/)
+		s3=s2[0].split(/_/)
+		arr2=[s3[1], s2[1]]
+		arr.push arr2
+	end
+	return arr	
+end
 
 get '/' do
 	@products=Product.where(category: 'pizza')
@@ -64,5 +75,7 @@ get '/shop/:category' do
 end
 
 post '/cart' do
-	erb 'Hello'
+	orders_input=params[:orders]
+	@orders = order_split orders_input
+	erb "ffsffds #{@orders.inspect}"
 end
