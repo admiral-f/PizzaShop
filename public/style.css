@@ -5,3 +5,24 @@ color:green;
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover {
     background-color: green;
 }
+
+#orders_button {
+	background-color: white
+	color: white;
+	padding-top: 15px;
+	padding-right: 25px;
+	padding-bottom: 15px;
+	padding-left: 25px;
+}
+
+.btn-link {
+    font-weight: 500;
+    color: white;
+    border-radius: 0;
+}
+
+.btn-link:focus, .btn-link:hover {
+    color: #132B17;
+    text-decoration: underline;
+    background-color: transparent;
+}
