@@ -95,7 +95,7 @@ end
 post '/order' do
 	@ordering = Order.new params[:order]
 	if @ordering.save
-		@answer="Order success"
+		@answer="Order has been placed success"
 		
 	else
 		@error=@ordering.errors.full_messages.first
@@ -104,7 +104,6 @@ post '/order' do
 end
 
 get '/admin' do
-	@orders = Order.new
 	erb :admin
 end
 
