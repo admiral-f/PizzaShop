@@ -114,7 +114,7 @@ post '/admin' do
 	login = params[:login]
 	password = params[:password]
 	if login=='admin' && password=='12345'
-		@orders=Order.all
+		@orders=Order.all.order('created_at DESC')
 		erb :admin_orders
 	else
 		@error='Wrong login or password'
