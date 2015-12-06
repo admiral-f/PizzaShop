@@ -83,6 +83,9 @@ end
 post '/cart' do
 	@orders_input=params[:orders]
 	@items = order_split @orders_input
+	if @items.length ==0
+		return erb "Your cart is empty"
+	end
 	@items.each do |item|
 		item[0] = Product.find(item[0])
 	end
@@ -96,7 +99,7 @@ post '/order' do
 	@ordering = Order.new params[:order]
 	if @ordering.save
 		@answer="Order has been placed success"
-		
+
 	else
 		@error=@ordering.errors.full_messages.first
 	end
