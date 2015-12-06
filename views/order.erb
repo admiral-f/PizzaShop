@@ -1,9 +1,8 @@
 <h2><center>order</center></h2>
 
 <script type="text/javascript">
-
-  window.onbeforeunload = function(){
-       window.localStorage.clear();
-       
-	}
+	$(function(){
+    	window.localStorage.clear();
+    	update_orders_button();
+    });
 </script>
