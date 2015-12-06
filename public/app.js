@@ -50,5 +50,11 @@ function cart_get_orders()
 	return orders;
 }
 
-
+function cancel_order()
+{
+	
+	window.localStorage.clear();
+	update_orders_button();
+	update_orders_input();
+}
 
