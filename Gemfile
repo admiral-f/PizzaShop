@@ -7,6 +7,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "sinatra-contrib"
 gem "pony"
+gem 'braintree'
 
 group :development do
    gem "tux"

@@ -17,6 +17,8 @@ GEM
     arel (6.0.3)
     backports (3.6.7)
     bond (0.5.1)
+    braintree (2.56.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     i18n (0.7.0)
     json (1.8.1)
@@ -54,6 +56,8 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
+    sqlite3 (1.3.11)
+    sqlite3 (1.3.11-x64-mingw32)
     sqlite3 (1.3.11-x86-mingw32)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -72,6 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  braintree
   json (= 1.8.1)
   pony
   sinatra
