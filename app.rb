@@ -4,6 +4,12 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pony'
 require 'sinatra/activerecord'
+require 'braintree'
+
+Braintree::Configuration.environment = :sandbox
+Braintree::Configuration.merchant_id = "pynw5bn48gsv6rgb"
+Braintree::Configuration.public_key = "mmsz7cbkh7g9nsn2"
+Braintree::Configuration.private_key = "584a1eea9194ea48a9811e5b05c22dbc"
 
 set :database, "sqlite3:pizzashop.db"
 
@@ -93,16 +99,15 @@ post '/cart' do
 	erb :cart
 end
 
-
-
 post '/order' do
 	@ordering = Order.new params[:order]
 	if @ordering.save
-		@answer="Order has been placed success"
+		@answer="Order has been placed success, please fill in the form"
 
 	else
 		@error=@ordering.errors.full_messages.first
 	end
+  Braintree::ClientToken.generate
 	erb :order
 end
 
@@ -120,5 +125,24 @@ post '/admin' do
 		@error='Wrong login or password'
 		erb :admin
 	end
-	
+end	
+
+
+post '/payment' do
+  @order_price=Order.last
+  result = Braintree::Transaction.sale(
+  :amount => "#{@order_price.price}",
+  :payment_method_nonce => 'fake-valid-nonce',
+  :options => {
+    :submit_for_settlement => true
+  }
+  )
+  if result.success?
+    @answer="Success! Transaction ID: #{result.transaction.id}"
+  else
+    @error="Error: #{result.message}"
+    redirect '/cart'
+    end
+  erb :payment
 end
+
