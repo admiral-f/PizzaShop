@@ -11,7 +11,8 @@ Braintree::Configuration.merchant_id = "pynw5bn48gsv6rgb"
 Braintree::Configuration.public_key = "mmsz7cbkh7g9nsn2"
 Braintree::Configuration.private_key = "584a1eea9194ea48a9811e5b05c22dbc"
 
-set :database, "sqlite3:pizzashop.db"
+#set :database, "sqlite3:pizzashop.db"
+set :database, {adapter: "postgresql", database: "pizzashop.db"}
 
 class Product <ActiveRecord::Base
 end
